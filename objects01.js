@@ -85,6 +85,22 @@ function personFactory(name){
     }
   }
 
-}
+};
 
 const me=personFactory('Anto');
+
+
+const jill = personFactory('Jill')
+
+// Write a factory function called createPerson that takes three parameters: name, age, and gender, and returns an object representing a person with those properties.
+
+
+function createPerson(name, age, gender){
+ return {
+   name,
+   age,
+   gender
+  }
+};
+
+const pedro = createPerson('pedro', 30, 'male');
