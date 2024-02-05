@@ -162,3 +162,45 @@ class User {
 }
 
 let user = new User('Antonio');
+
+
+
+class Rectangle{
+  constructor(height, width){
+    this.height = height;
+    this.width =width;
+  }
+  get area(){
+    return this.calcArea();
+  }
+  calcArea(){
+    return this.height * this.width;
+  }
+
+}
+
+  class Cat {
+    constructor(name){
+      this.name = name;
+    }
+    speak(){
+      console.log(`${this.name} makes a noise`);
+    }
+  }
+
+
+rectangle1 = new Rectangle(10,20);
+console.log(rectangle1)
+
+const cat1 = new Cat('Rengar');
+cat1.speak()
+
+class Lion extends Cat{
+  speak(){
+    super.speak();
+    console.log(`${this.name} roars`);
+  }
+}
+
+const lion1 = new Lion('Simba');
+lion1.speak()
