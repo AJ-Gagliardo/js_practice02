@@ -77,6 +77,9 @@ player1.valueOf();
 
 // factory fuction
 
+
+/*
+
 function personFactory(name){
  return{
     name,
@@ -104,3 +107,58 @@ function createPerson(name, age, gender){
 };
 
 const pedro = createPerson('pedro', 30, 'male');
+
+*/
+
+// Setters and getters
+
+
+/*
+
+const account = {
+owner: 'Jonas',
+movements:[200,530,120,300],
+
+get latest(){
+  return this. movements.slice(-1).pop();
+},
+set latest(mov){
+  this.movements.push(mov);
+}
+};
+
+console.log(account.latest);
+
+
+
+class Person{
+  constructor(fullName){
+    this.fullName = fullName
+  };
+
+    set fullName(name){
+      console.log(name);
+      if(name.includes(' ')) this._fullName=name;
+      else(alert(`${name} is not a full name `));
+    };
+
+    get fullName(){
+      return this._fullName
+    }
+}
+
+const antonio = new Person('Antonio Gagliardo');
+console.log(antonio)
+
+*/
+
+class User {
+  constructor(name){
+    this.name = name;
+  }
+  sayHi(){
+    console.log(this.name);
+  }
+}
+
+let user = new User('Antonio');
