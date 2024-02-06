@@ -204,3 +204,21 @@ class Lion extends Cat{
 
 const lion1 = new Lion('Simba');
 lion1.speak()
+
+
+
+class Animal {
+  speak() {
+    return this;
+  }
+  static eat() {
+    return this;
+  }
+}
+
+const obj = new Animal();
+obj.speak(); // returns the objetct
+
+// obj.eat(); //doesnt work
+Animal.eat() // 
+
