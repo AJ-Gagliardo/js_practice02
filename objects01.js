@@ -222,3 +222,28 @@ obj.speak(); // returns the objetct
 // obj.eat(); //doesnt work
 Animal.eat() // 
 
+
+function OldStyleClass(){
+  this.someProperty = 1;
+}
+
+
+// getters adn setters again
+
+
+const treasutreChest = {
+  _goldCoins:0,
+  get goldCoins(){
+    return this._goldCoins;
+  },
+  set goldCoins(amount){
+    if(amount>=0){
+      this._goldCoins = amount;
+    }else{
+      console.log("Sorry can't put negative coins")
+    }
+  }
+}
+
+
+
