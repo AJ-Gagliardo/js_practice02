@@ -183,7 +183,7 @@ class Rectangle{
     constructor(name){
       this.name = name;
     }
-    speak(){
+   speak(){
       console.log(`${this.name} makes a noise`);
     }
   }
