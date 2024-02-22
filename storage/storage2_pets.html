@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root{
+            background-color: black;
+            color:white;
+        }
+    </style>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+function createPerson(name,pets){
+    return{
+        name:name,
+        pets:pets
+    }
+}
+
+function savePerson(person){
+    localStorage.setItem(person.name, JSON.stringify(person));
+}
+    function getPerson(name){
+        let personData = localStorage.getItem(name);
+        if(personData){
+            return JSON.parse(personData)
+        }
+        return null;
+    }
+
+
+</script>
+</html>

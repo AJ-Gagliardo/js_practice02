@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root{
+            background-color: black;
+            color:white;
+        }
+    </style>    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<!-- objects are not saved well so JSON.stringify is needed -->
+<script>
+localStorage.setItem('accept-cookies', 'true');
+localStorage.setItem('data',JSON.stringify({prop:1}));
+localStorage.setItem('score',5);
+localStorage.setItem('nickname','Harry');
+
+console.log(localStorage.getItem('nickname'));
+console.log(localStorage.getItem('data'));
+
+
+// to ge tthe whole thing as object
+console.log({...localStorage});
+
+// to get only the values
+console.log(Object.values(localStorage));
+
+// to get only the keys
+console.log(Object.keys(localStorage));
+
+// to get keys and vaues in array format
+// console.log(object.entries(localStorage));
+
+
+// good way fo replacing items
+
+if(localStorage.getItem('nickname') === null){
+    localStorage.setItem('nickname','Steve') // this way it only gets replaces if nickname doesnt exist
+};
+
+localStorage.removeItem('data');
+console.log(localStorage)
+
+
+</script>
+</html>
