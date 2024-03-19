@@ -37,14 +37,27 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-const request = new XMLHttpRequest();
-request.open('GET', 'https://restcountries.com/v3.1/name/portugal');
-request.send();
-console.log(request.responseText);
+// const request = new XMLHttpRequest();
+// request.open('GET', 'https://restcountries.com/v3.1/name/portugal');
+// request.send();
+// console.log(request.responseText);
 
-request.addEventListener('load',function(){
-    console.log(this.responseText)
-});
+// request.addEventListener('load',function(){
+//     console.log(this.responseText)
+// });
+
+const getCountryData = function(country){
+    fetch(`https://restcountries.com/v3.1/name/${country}`).then(function(
+        response){ //theb is when its fufilled (promise loads)
+console.log(response);
+return response.json(); 
+    }).then(function(data){
+        console.log(data)
+    });
+};
+
+getCountryData('portugal');
+
 
   </script>
 </html>
