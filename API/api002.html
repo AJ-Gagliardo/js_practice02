@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#">
+  <script>
+  </script>
+</body>
+
+
+<script>
+    // const img = document.querySelector('img');
+    // fetch('https://api.giphy.com/v1/gifs/translate?api_key=YPKCYb6bHIMy7aBVuya6yhScxMhW2oeT&s=cats', {mode: 'cors'})
+    // .then(function(response){
+    //     return response.json();
+    // })
+    // .then(function(response) {
+    //   console.log(response);
+    // });
+    // ;
+
+  const img = document.querySelector('img');
+  fetch('myapiKey=cats', {mode: 'cors'}) // i will search how to make the api key private
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      console.log(response.data.images.original.url);
+    });
+
+
+  </script>
+
+
+</html>
