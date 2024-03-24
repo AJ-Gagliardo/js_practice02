@@ -57,7 +57,7 @@ const renderCountry = function (data, className = '') {
     <article class="country ${className}">
       <img class="country__img" src="${Object.values(data.flags)[0]}" />
       <div class="country__data">
-        <h3 class="country__name">${data.name}</h3>
+        <h3 class="country__name">${Object.values(data.name)[0]}</h3>
         <h4 class="country__region">${data.region}</h4>
         <p class="country__row"><span>👫</span>${(
           +data.population / 1000000
@@ -104,6 +104,7 @@ const getCountryData = function(country){
         // console.log(Object.values(data[0].languages)[0])
         // console.log(Object.values(Object.values(data[0].currencies)[0])[0])
         // console.log(Object.values(data[0].flags)[0]);
+        console.log(Object.values(data[0].name)[0])
     });
     
 };
