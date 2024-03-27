@@ -117,23 +117,31 @@ const getCountryData = function(country){
     fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response=>response.json())
     .then(data=>renderCountry(data[0]))};
+    const neighbour = data[0].borders?[0]
+
+    // if(!neightbour) return;
+
+    // country 2
+
+    fetch()
 
 
 getCountryData('portugal');
 getCountryData('italy');
 
 
-const countries = function(){
-  fetch(`https://restcountries.com/v3.1/all`).then(
-function(response){
-  console.log(response);
-  return response.json();
-}).then(function(data){
-  console.log(data)
-})
-  }
 
-  countries()
+  // const countries = function(){
+  //   fetch(`https://restcountries.com/v3.1/all`).then(
+  // function(response){
+  //   console.log(response);
+  //   return response.json();
+  // }).then(function(data){
+  //   console.log(data)
+  // })
+  //   }
+
+  //   countries()
 
 
 
