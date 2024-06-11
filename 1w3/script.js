@@ -31,3 +31,5 @@ console.log(arrayB);
 }
 
 checkAnagram(text1,text2);
+
+
