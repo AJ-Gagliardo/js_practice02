@@ -49,3 +49,37 @@ function shuffleArray(array){
 // function getRandomIndex(){
 //     console.log(Math.floor(Math.random()*array.length))
 // }
+
+
+
+// exercise make a function that sums and array
+function sumArray(arr) {
+   
+    const sumArr = arr.reduce((a,b)=>{
+        return a+b;
+    },0)
+    return sumArr;
+  }
+  
+  // Example:
+  console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+
+
+
+  function reverseArray(arr) {
+    
+    const reverseA = arr.reverse()
+    return reverseA;
+  }
+  
+  // Example:
+  console.log(reverseArray([1, 2, 3, 4, 5])); // Output: [5, 4, 3, 2, 1]
+  
+
+  function maxElement(arr) {
+    const sortedArr = arr.sort((a,b)=> {return a-b});
+    return sortedArr[arr.length -1]; 
+  }
+  
+  // Example:
+  console.log(maxElement([1, 3, 7, 2, 5])); // Output: 7
