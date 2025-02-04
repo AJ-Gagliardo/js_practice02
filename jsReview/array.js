@@ -12,3 +12,8 @@ console.log(fruits[fruits.length - 1]);
 
 // Change "Banana" to "Mango".
 // Add "Orange" at the end of the array.
+
+// Array Length
+
+// Print how many elements are in the fruits array.
+console.log(fruits.length);
