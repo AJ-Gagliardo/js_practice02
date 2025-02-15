@@ -41,3 +41,24 @@ for (let i = 0; i < fruits.length; i++) {
 // Check if an Element Exists
 
 // Check if "Cherry" is in the array and print true or false.
+console.log("is Cherry in the array? ", fruits.includes("Cherry"));
+
+// Aray Seaarching and sorting
+
+let numbers = [10, 20, 30, 40, 50];
+
+// Find the index of 30 in the array.
+console.log("index of 30 is ", numbers.indexOf(30));
+// Find the index of 60. What does it return?
+console.log("index of 60 is ", numbers.indexOf(60));
+
+// 2. Checking Conditions in an Array
+// Given let words = ["apple", "banana", "cherry", "date"];
+let words = ["apple", "banana", "cherry", "date"];
+// Check if any word in the array starts with "b".
+console.log(
+  "a words starts with 'b'? ",
+  words.some((word) => word.startsWith("b"))
+);
+
+// Check if all words have more than 3 letters.
