@@ -66,16 +66,24 @@ let books = [
 let booksToString = books.map((book) => Object.values(book).join(" "));
 console.log(booksToString);
 
+// --
 //Find the first repeated number in an array.
 
 let numbers = [5, 1, 2, 3, 5, 7, 8, 1, 9];
 
 // Expected Output: 5
 
+//--
 //Find the longest word in an array.
 let sentence = ["JavaScript", "React", "Node", "Programming", "Web"];
 
 // Expected Output: "Programming"
+
+const longestword = sentence.reduce(
+  (longest, word) => (word.length > longest.length ? word : longest),
+  ""
+);
+console.log("the longest word is: ", longestword);
 
 //Group an array of items by category
 let items = [
