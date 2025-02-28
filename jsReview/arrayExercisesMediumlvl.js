@@ -98,3 +98,25 @@ let items = [
 //   Fruit: ["Apple", "Banana"],
 //   Vegetable: ["Carrot", "Broccoli"]
 // }
+
+let items2 = [
+  { name: "Apple", category: "Fruit" },
+  { name: "Banana", category: "Fruit" },
+  { name: "Carrot", category: "Vegetable" },
+  { name: "Broccoli", category: "Vegetable" },
+];
+
+// Expected Output:
+// {
+//   Fruit: ["Apple", "Banana"],
+//   Vegetable: ["Carrot", "Broccoli"]
+// }
+let filteredFruits = items2.reduce((acc, item) => {
+  if (!acc[item.category]) {
+    acc[item.category] = [];
+  }
+  acc[item.category].push(item.name); // Add item name to the category
+  return acc;
+}, {});
+
+console.log(filteredFruits);
