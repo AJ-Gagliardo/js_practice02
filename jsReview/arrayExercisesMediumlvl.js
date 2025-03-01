@@ -120,3 +120,20 @@ let filteredFruits = items2.reduce((acc, item) => {
 }, {});
 
 console.log(filteredFruits);
+
+let items3 = [
+  { name: "Cherry", category: "Fruit" },
+  { name: "Banana", category: "Fruit" },
+  { name: "Cabagge", category: "Vegetable" },
+  { name: "Broccoli", category: "Vegetable" },
+];
+
+const itemsFiltered = items3.reduce((acc, item) => {
+  if (!acc[item.category]) {
+    acc[item.category] = [];
+  }
+  acc[item.category].push(item.name);
+  return acc;
+}, {});
+
+console.log("filtered items ", itemsFiltered);
