@@ -132,7 +132,7 @@ const itemsFiltered = items3.reduce((acc, item) => {
   if (!acc[item.category]) {
     acc[item.category] = [];
   }
-  acc[item.category].push(item.name);
+  acc[item.category].push(item.name); 
   return acc;
 }, {});
 

@@ -157,3 +157,39 @@ console.log(
 // 6. Flatten this array into a single-level array:
 let nested = [1, [2, 3], [4, [5, 6]]];
 console.log("flattening a nested array: ", nested.flat(2));
+
+//
+console.log("numbers 3...");
+let numbers3 = [10, 5, 8, 20, 15, 20, 7];
+
+const sortedNumbers3 = numbers3.sort(function (a, b) {
+  return a - b;
+});
+console.log(
+  `the largest number is ${sortedNumbers3[sortedNumbers3.length - 1]}`
+);
+
+// Expected Output: 15
+
+console.log("finding common elements");
+let arr1 = [1, 2, 3, 4, 5];
+let arr2 = [3, 4, 5, 6, 7];
+
+// Expected Output: [3, 4, 5]
+function includesNum(value, array) {
+  if (array.includes(value)) {
+    return true;
+  }
+  return false;
+}
+
+console.log(`test1 includes num in array`);
+console.log(includesNum(1, arr1));
+console.log(`test2 includes num in array`);
+console.log(includesNum(6, arr1));
+
+//arr1 have to map or go over each element
+//ask if arr1 item is included in array 2
+
+const valuesBotharr = arr1.filter((value) => includesNum(value, arr2));
+console.log(valuesBotharr);
