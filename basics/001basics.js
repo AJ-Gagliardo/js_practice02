@@ -54,3 +54,26 @@ add2num(10, 25);
 console.log("--- car object exercise -- ");
 const car = { brand: "Kia", model: "Soul", year: "2011" };
 console.log(`My car is a ${car.year} ${car.brand} ${car.model}`);
+
+// Write a function isEven(number) that returns true if the number is even, and false if it’s odd.
+
+// Try it with 4, 7, and 10.
+
+console.log("--- exercise is even ? --- ");
+function isEven(a) {
+  a % 2 === 0 ? console.log("true") : console.log("false");
+}
+isEven(4);
+isEven(7);
+isEven(10);
+
+// Write a function reverseString(str) that takes a string and returns it reversed.
+
+// Example: "hello" → "olleh"
+
+console.log("--- reverse string ---");
+function reverseString(str) {
+  console.log(str.split("").reverse().join(""));
+}
+
+reverseString("hello");
