@@ -77,3 +77,50 @@ function reverseString(str) {
 }
 
 reverseString("hello");
+
+// Given an array of numbers [3, 7, 2, 9, 5], write code that finds the largest number.
+console.log("--- largest num ---");
+const arrayNum1 = [3, 7, 2, 9, 5];
+
+function largestNum(arr) {
+  console.log(Math.max.apply(null, arr));
+}
+
+largestNum(arrayNum1);
+
+// A palindrome is a word that reads the same forward and backward (e.g., "racecar", "level").
+// Write a function isPalindrome(word) that returns true or false.
+
+console.log("--- check palindromes --- ");
+function isPalindrome(word) {
+  let reverseWord = word.split("").reverse().join("");
+  word === reverseWord ? console.log(true) : console.log(false);
+}
+
+isPalindrome("racecar");
+isPalindrome("palindrome");
+
+// Loop from 1 to 20:
+
+// Print "Fizz" if the number is divisible by 3,
+
+// "Buzz" if divisible by 5,
+
+// "FizzBuzz" if divisible by both,
+
+// Or just the number if neither.
+
+console.log("--- fizz buzz exercise --- ");
+function fizzBuzz() {
+  for (let i = 1; i < 21; i++) {
+    i % 3 === 0 && i % 5 === 0
+      ? console.log("FizzBuzz")
+      : i % 3 === 0
+      ? console.log("Fizz")
+      : i % 5 === 0
+      ? console.log("Buzz")
+      : console.log(i);
+  }
+}
+
+fizzBuzz();
