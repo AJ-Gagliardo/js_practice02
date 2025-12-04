@@ -65,4 +65,24 @@ function evenOddPattern(n) {
   if (n % 2 === 0) console.log(`even ${n}`);
 }
 
-evenOddPattern(4);
+// evenOddPattern(4);
+
+function mirrorLetters(inputLetter) {
+  //base
+  let number = inputLetter.charCodeAt(0);
+  let letter = String.fromCharCode(number);
+  if (number < 65) return;
+
+  //work before
+  // console.log(number);
+  console.log(String.fromCharCode(number));
+  // console.log(String.fromCharcode(letter));
+
+  //recursion call
+  mirrorLetters(String.fromCharCode(number - 1));
+
+  //work after
+  console.log(String.fromCharCode(number));
+}
+
+mirrorLetters("C");
