@@ -71,7 +71,7 @@ function mirrorLetters(inputLetter) {
   //base
   let number = inputLetter.charCodeAt(0);
   let letter = String.fromCharCode(number);
-  if (number < 65) return;
+  if (number === 65) return console.log("A");
 
   //work before
   // console.log(number);
