@@ -85,4 +85,36 @@ function mirrorLetters(inputLetter) {
   console.log(String.fromCharCode(number));
 }
 
-mirrorLetters("C");
+// mirrorLetters("C");
+
+const user = {
+  name: "Antonio",
+  age: 33,
+  address: {
+    city: "Vancouver",
+    country: "Canada",
+    details: {
+      postal: "xxx",
+      apartment: 123,
+    },
+  },
+  scores: {
+    math: 88,
+    english: 95,
+  },
+};
+
+// console.log(Object.values(user));
+function printKeys(obj) {
+  for (let key in obj) {
+    //print key
+    console.log(key);
+    // check if its another object + recursion
+    let value = obj[key];
+
+    if (typeof value === "object") {
+      printKeys(value);
+    }
+  }
+}
+printKeys(user);
