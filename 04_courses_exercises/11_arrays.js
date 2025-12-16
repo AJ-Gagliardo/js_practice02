@@ -32,3 +32,19 @@ const account4 = {
 };
 
 const accounts = [account1, account2, account3, account4];
+
+// const user = "Steve Thomas Williams"; // result shuold be stw
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      // const username = user
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
