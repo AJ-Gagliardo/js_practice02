@@ -33,3 +33,45 @@ function wordCount(str) {
 }
 
 console.log(wordCount("tralarero tralala"));
+
+// Exercise 13: Find Duplicates
+
+// Write a function that finds duplicates in an array.
+// Example: [1, 2, 3, 4, 2, 5, 1] → [1, 2]
+
+const arr2 = [1, 2, 3, 4, 2, 5, 1];
+console.log("--- duplicates ---");
+function findDuplicates(arr) {
+  let sortedArray = arr.sort((a, b) => a - b);
+  // console.log(sortedArray);
+  let duplicates = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (
+      sortedArray[i] === sortedArray[i + 1] &&
+      !duplicates.includes(sortedArray[i])
+    ) {
+      duplicates.push(sortedArray[i]);
+    }
+  }
+  return duplicates;
+}
+
+console.log(findDuplicates(arr2));
+
+// Exercise 14: Factorial
+
+// Write a function factorial(n) that returns the factorial of a number (n!).
+// Example: factorial(5) → 120
+
+console.log("---factorial ---");
+
+function factorial(n) {
+  if (n > 1) {
+    return n * factorial(n - 1);
+  } else {
+    return 1;
+  }
+}
+
+console.log(factorial(5));
