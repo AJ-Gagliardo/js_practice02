@@ -196,3 +196,37 @@ function reverseString(word) {
 }
 
 // console.log(reverseString("hello"));
+
+function isPalindrome(word) {
+  let wordLower = word.toLowerCase();
+  let reverse = [];
+
+  // console.log(wordLower);
+  for (let i = 0; i < word.length; i++) {
+    reverse.unshift(wordLower[i]);
+  }
+  let reverseString = reverse.join("");
+  // console.log(reverseString);
+  return reverseString === wordLower;
+}
+
+// console.log(isPalindrome("racecar"));
+// console.log(isPalindrome("hello"));
+
+/*
+Write a function charCount that:
+
+Takes a string
+
+Returns an object with how many times each character appears
+*/
+
+function charCount(word) {
+  let letterCount = {};
+  for (let i = 0; i < word.length; i++) {
+    letterCount[word[i]] ? letterCount[word[i]]++ : (letterCount[word[i]] = 1);
+  }
+  return letterCount;
+}
+
+console.log(charCount("hello"));
