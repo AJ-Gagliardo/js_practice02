@@ -171,6 +171,28 @@ function countVowels(string) {
   return counter;
 }
 
-console.log(countVowels("hello")); //2
-console.log(countVowels("javascript")); //3
-console.log(countVowels("sky")); //0
+// console.log(countVowels("hello")); //2
+// console.log(countVowels("javascript")); //3
+// console.log(countVowels("sky")); //0
+
+/*
+
+Write a function reverseString that:
+
+Takes a string
+
+Returns the string reversed
+*/
+
+function reverseString(word) {
+  let wordArr = word.split("");
+  let reverse = [];
+
+  for (let i = 0; i < word.length; i++) {
+    reverse.unshift(word[i]);
+    console.log(word[i]);
+  }
+  return reverse.join("");
+}
+
+// console.log(reverseString("hello"));
