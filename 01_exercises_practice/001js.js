@@ -139,3 +139,38 @@ function doubleNumbers(arr) {
 
 // console.log(doubleNumbers([1, 2, 3])); // [2, 4, 6]
 // console.log(doubleNumbers([-1, 0, 5])); // [-2, 0, 10]
+
+function getPositives(arr) {
+  let newArray = [];
+  for (let num of arr) {
+    if (num > 0) {
+      newArray.push(num);
+    }
+  }
+  return newArray;
+}
+
+// console.log(getPositives([1, -2, 3, 0, -5])); // [1,3]
+// console.log(getPositives([-1, -2])); // []
+
+function countVowels(string) {
+  let stringLowerCase = string.toLowerCase();
+  let splitString = stringLowerCase.split("");
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  // console.log(splitString);
+  let counter = 0;
+  for (let letter of splitString) {
+    if (vowels.includes(letter)) {
+      // console.log(letter);
+      counter++;
+    }
+  }
+  // console.log(splitString);
+  // return splitString.length;
+  return counter;
+}
+
+console.log(countVowels("hello")); //2
+console.log(countVowels("javascript")); //3
+console.log(countVowels("sky")); //0
