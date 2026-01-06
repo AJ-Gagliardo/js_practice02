@@ -229,4 +229,71 @@ function charCount(word) {
   return letterCount;
 }
 
-console.log(charCount("hello"));
+function isPalindrome2(word) {
+  let wordLowerCase = word.toLowerCase();
+  let wordArr = [];
+
+  for (let i = 0; i < word.length; i++) {
+    wordArr.unshift(word[i]);
+    // console.log(word[i]);
+  }
+  console.log(wordArr.join(""));
+  let reverseWord = wordArr.join("");
+  console.log(reverseWord);
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] !== reverseWord[i]) {
+      return false;
+    }
+  }
+  // console.log(reverseWord);
+  // console.log(wordArr);
+  return true;
+}
+
+// console.log(isPalindrome2("racecar"));
+
+// console.log(charCount("hello"));
+
+/*
+Write a function isAnagram that:
+
+Takes two strings
+
+Returns true if they are anagrams
+
+Returns false otherwise
+
+Assume lowercase, no spaces
+*/
+
+function isAnagram(string1, string2) {
+  // let wordLower = word.toLowerCase;
+  let string1Lower = string1.toLowerCase();
+  let string2Lower = string2.toLowerCase();
+
+  let word1 = {};
+  let word2 = {};
+  if (string1.length !== string2.length) {
+    return false;
+  }
+  for (let i = 0; i < string1.length; i++) {
+    console.log(i);
+    word1[string1Lower[i]]
+      ? word1[string1Lower[i]]++
+      : (word1[string1Lower[i]] = 1);
+    word2[string2Lower[i]]
+      ? word2[string2Lower[i]]++
+      : (word2[string2Lower[i]] = 1);
+  }
+  console.log(word1);
+  console.log(word2);
+  // return word1 === word2;
+  for (let key in word1) {
+    if (word1[key] !== word2[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isAnagram("car", "rac"));
