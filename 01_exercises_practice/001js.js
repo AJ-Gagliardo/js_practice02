@@ -349,7 +349,7 @@ let words1Sort = words1.reduce((acc, cur) =>
   acc.length > cur.length ? acc : cur
 );
 
-console.log(words1Sort);
+// console.log(words1Sort);
 
 /*
 Write a function longestWord that:
@@ -373,12 +373,34 @@ function longestWord(string) {
   });
 }
 
-console.log(longestWord("I love javascript programming"));
+// console.log(longestWord("I love javascript programming"));
+// // "programming"
+
+// console.log(longestWord("The quick brown fox"));
+// // "quick"
+
+// console.log(longestWord("Hello world"));
+
+// // "Hello"
+
+//again btu without .reduce
+
+function longestWord2(string) {
+  let words = string.split(" ");
+  let longestWord = "";
+  // console.log(words);
+  for (let word of words) {
+    if (longestWord.length < word.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
+
+console.log(longestWord2("I love javascript programming"));
 // "programming"
 
-console.log(longestWord("The quick brown fox"));
+console.log(longestWord2("The quick brown fox"));
 // "quick"
 
-console.log(longestWord("Hello world"));
-
-// "Hello"
+console.log(longestWord2("Hello world")); //hello
