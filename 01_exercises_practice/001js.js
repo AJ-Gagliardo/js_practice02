@@ -336,7 +336,49 @@ function firstUniqueChar(string) {
     }
   }
 }
-console.log(firstUniqueChar("aabbcdd"));
-console.log(firstUniqueChar("aabb"));
-console.log(firstUniqueChar("stress"));
-console.log(firstUniqueChar("aabbcac"));
+// console.log(firstUniqueChar("aabbcdd"));
+// console.log(firstUniqueChar("aabb"));
+// console.log(firstUniqueChar("stress"));
+// console.log(firstUniqueChar("aabbcac"));
+
+console.log("--");
+
+let words1 = ["asd", "lala", "parangaricuti"];
+
+let words1Sort = words1.reduce((acc, cur) =>
+  acc.length > cur.length ? acc : cur
+);
+
+console.log(words1Sort);
+
+/*
+Write a function longestWord that:
+
+Takes a sentence (string)
+
+Returns the longest word
+
+If there is a tie, return the first longest word
+*/
+
+function longestWord(string) {
+  // let words = string.split(" ");
+  // let longestWord = null;
+  // console.log(words);
+  return string.split(" ").reduce((acc, cur) => {
+    // console.log(acc.length > cur.length ? acc : cur);
+    return acc.length > cur.length ? acc : cur;
+
+    // console.log(acc.length > cur.length);
+  });
+}
+
+console.log(longestWord("I love javascript programming"));
+// "programming"
+
+console.log(longestWord("The quick brown fox"));
+// "quick"
+
+console.log(longestWord("Hello world"));
+
+// "Hello"
