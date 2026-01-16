@@ -296,4 +296,47 @@ function isAnagram(string1, string2) {
   return true;
 }
 
-console.log(isAnagram("car", "rac"));
+// console.log(isAnagram("car", "rac"));
+
+/*
+
+Write a function firstUniqueChar that:
+
+Takes a string
+
+Returns the first character that appears only once
+
+Returns null if none exist
+
+Example
+firstUniqueChar("aabbcdd"); // "c"
+firstUniqueChar("aabb");   // null
+firstUniqueChar("stress"); // "t"
+*/
+
+// function firstUniqueChar(string) {
+//   for (let i = 1; i < string.length; i++) {
+//     if (string[i] !== string[i - 1] && string[i] !== string[i + 1]) {
+//       return string[i];
+//     }
+//   }
+//   return null;
+// }
+
+function firstUniqueChar(string) {
+  let countL = {};
+  for (let i = 0; i < string.length; i++) {
+    countL[string[i]] ? countL[string[i]]++ : (countL[string[i]] = 1);
+  }
+  // console.log(countL);
+  for (let char of string) {
+    // console.log(countL[char]);
+    if (countL[char] === 1) {
+      return char;
+    }
+  }
+}
+console.log(firstUniqueChar("aabbcdd"));
+console.log(firstUniqueChar("aabb"));
+console.log(firstUniqueChar("stress"));
+console.log(firstUniqueChar("aabbcac"));
