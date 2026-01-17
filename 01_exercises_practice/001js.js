@@ -397,10 +397,64 @@ function longestWord2(string) {
   return longestWord;
 }
 
-console.log(longestWord2("I love javascript programming"));
-// "programming"
+// console.log(longestWord2("I love javascript programming"));
+// // "programming"
 
-console.log(longestWord2("The quick brown fox"));
-// "quick"
+// console.log(longestWord2("The quick brown fox"));
+// // "quick"
 
-console.log(longestWord2("Hello world")); //hello
+// console.log(longestWord2("Hello world")); //hello
+
+// capitalize first word of every string
+
+function capitalizeWords(string) {
+  let words = string.split(" ");
+  let wordsCap = [];
+  for (let word of words) {
+    // console.log(word);
+    wordsCap.push(word[0].toUpperCase() + word.slice(1));
+    // console.log(wordsCap);
+  }
+  // console.log(wordsCap);
+  return wordsCap.join(" ");
+}
+
+// console.log(capitalizeWords("hello world")); // "Hello World"
+
+//
+// ############## Increased difficulty ##########
+
+const products = [
+  { id: 1, name: "Gi", category: "BJJ", price: 120 },
+  { id: 2, name: "Gloves", category: "Muay Thai", price: 80 },
+  { id: 3, name: "Belt", category: "BJJ", price: 15 },
+  { id: 4, name: "Shin Guards", category: "Muay Thai", price: 95 },
+  { id: 5, name: "Mouthguard", category: "MMA", price: 25 },
+];
+
+//Exercise A: Group products by category
+
+// Task
+
+// Write groupByCategory(products) that returns an object like: {
+// {"BJJ": [
+//   { id: 1, name: "Gi", category: "BJJ", price: 120 },
+//   { id: 3, name: "Belt", category: "BJJ", price: 15 }
+// ], "muay thai" : [{...}], "MMA" : [{...}, ]}
+
+function productsByCategory(arr) {
+  let byCategory = { BJJ: [{ id: 1 }] };
+  for (let item of arr) {
+    console.log(item.category);
+    if (byCategory[item.category]) {
+      console.log("a");
+      console.log("already inclued, add this one");
+    } else {
+      console.log("b");
+      byCategory[item.category] = item;
+    }
+  }
+  return byCategory;
+}
+
+console.log(productsByCategory(products));
