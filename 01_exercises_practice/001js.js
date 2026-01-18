@@ -480,4 +480,27 @@ function productsByCategory(arr) {
   }
   return byCategory;
 }
-console.log(productsByCategory(products));
+// console.log(productsByCategory(products));
+
+// Exercise B: Cart summary (total + itemCount)
+const cart = [
+  { name: "Gi", price: 120, qty: 1 },
+  { name: "Belt", price: 15, qty: 2 },
+  { name: "Gloves", price: 80, qty: 1 },
+];
+
+// result should be like { itemCount: 4, total: 230 }
+
+function cartSummary(cart) {
+  let summary = { itemCount: 0, total: 0 };
+  for (let item of cart) {
+    // console.log(item["qty"]);
+    // console.log(item["qty"]);
+    // summary = { itemCount: 1 };
+    summary.itemCount += item["qty"];
+    summary.total += item["qty"] * item["price"];
+  }
+  return summary;
+}
+
+console.log(cartSummary(cart));
