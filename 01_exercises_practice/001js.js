@@ -442,13 +442,22 @@ const products = [
 //   { id: 3, name: "Belt", category: "BJJ", price: 15 }
 // ], "muay thai" : [{...}], "MMA" : [{...}, ]}
 
+/*
 function productsByCategory(arr) {
   let byCategory = { BJJ: [{ id: 1 }] };
   for (let item of arr) {
     console.log(item.category);
     if (byCategory[item.category]) {
       console.log("a");
-      console.log("already inclued, add this one");
+      // console.log("already inclued, add this one");
+      // console.log(byCategory[item.category]);
+      // byCategory[item.category] = "asd";
+      // byCategory[item.category] = [byCategory[item.category]];
+      console.log(
+        "here is what i cant find out , my lovig is spreading the object and adding the ITEM"
+      );
+      // console.log(byCategory);
+      console.log(byCategory[item.category]);
     } else {
       console.log("b");
       byCategory[item.category] = item;
@@ -456,5 +465,19 @@ function productsByCategory(arr) {
   }
   return byCategory;
 }
+*/
 
+function productsByCategory(arr) {
+  let byCategory = {};
+
+  for (let item of arr) {
+    let category = item.category;
+
+    if (!byCategory[category]) {
+      byCategory[category] = [];
+    }
+    byCategory[category].push(item);
+  }
+  return byCategory;
+}
 console.log(productsByCategory(products));
