@@ -346,7 +346,7 @@ console.log("--");
 let words1 = ["asd", "lala", "parangaricuti"];
 
 let words1Sort = words1.reduce((acc, cur) =>
-  acc.length > cur.length ? acc : cur
+  acc.length > cur.length ? acc : cur,
 );
 
 // console.log(words1Sort);
@@ -503,4 +503,34 @@ function cartSummary(cart) {
   return summary;
 }
 
-console.log(cartSummary(cart));
+// console.log(cartSummary(cart));
+
+function reduceCartSum(cart) {
+  let cartSum = cart.reduce(
+    (acc, cur) => {
+      // console.log(acc.itemCount);
+      acc.itemCount += cur.qty;
+      acc.total += cur.qty * cur.price;
+      return acc;
+    },
+    // { itemCount: 0, total: 0 }
+  );
+  return cartSum;
+}
+// console.log(reduceCartSum(cart));
+
+// const after2Sec = setTimeout(() => console.log("lala"), 2000);
+
+const flipCoin = new Promise((resolve, reject) => {
+  const isHeads = Math.random() > 0.5;
+
+  if (isHeads) {
+    resolve("success its heads");
+  } else {
+    reject("oh no its tails");
+  }
+});
+
+flipCoin
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error));
