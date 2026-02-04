@@ -521,16 +521,53 @@ function reduceCartSum(cart) {
 
 // const after2Sec = setTimeout(() => console.log("lala"), 2000);
 
-const flipCoin = new Promise((resolve, reject) => {
-  const isHeads = Math.random() > 0.5;
+// const flipCoin = new Promise((resolve, reject) => {
+//   const isHeads = Math.random() > 0.5;
 
-  if (isHeads) {
-    resolve("success its heads");
-  } else {
-    reject("oh no its tails");
+//   setTimeout(() => {
+//     if (isHeads) {
+//       resolve("success its heads");
+//     } else {
+//       reject("oh no its tails");
+//     }
+//   }, 2000);
+// });
+
+// flipCoin
+//   .then((message) => console.log(message))
+//   .catch((error) => console.error(error));
+
+// async function
+
+// try {
+//   const result = await flipCoin;
+//   console.log(result);
+// } catch (err) {
+//   console.log(err);
+// }
+
+// async function getdb() {
+//   fetch("https://jsonplaceholder.typicode.com/todos/1").then(
+//     function (response) {
+//       console.log(response.json());
+//       return response.json();
+//     },
+//   );
+// }
+// getdb();
+
+async function getdb() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/1",
+    );
+
+    const data = await response.json();
+
+    console.log(data);
+  } catch (error) {
+    console.log(error);
   }
-});
+}
 
-flipCoin
-  .then((message) => console.log(message))
-  .catch((error) => console.error(error));
+getdb();
