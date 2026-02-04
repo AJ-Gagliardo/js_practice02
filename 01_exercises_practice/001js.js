@@ -556,18 +556,44 @@ function reduceCartSum(cart) {
 // }
 // getdb();
 
-async function getdb() {
+// async function getdb() {
+//   try {
+//     const response = await fetch(
+//       "https://jsonplaceholder.typicode.com/todos/1",
+//     );
+
+//     const data = await response.json();
+
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// getdb();
+console.log("--");
+let pokemonData = {
+  data: null,
+  isLoaded: false,
+};
+
+async function getPokemonData(pokemon) {
   try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos/1",
-    );
-
-    const data = await response.json();
-
-    console.log(data);
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    pokemonData.data = await response.json();
+    pokemonData.isLoaded = true;
+    // console.log(pokemonData.data);
+    console.log("Pokedex updated");
+    useData();
   } catch (error) {
     console.log(error);
   }
 }
 
-getdb();
+function useData() {
+  if (pokemonData.isLoaded) {
+    console.log("accessing from database: " + pokemonData.data.name);
+  }
+}
+
+getPokemonData("pikachu");
