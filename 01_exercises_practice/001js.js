@@ -598,6 +598,7 @@ function useData() {
 
 // getPokemonData("pikachu");
 
+/*
 async function getTeam() {
   try {
     const p1Promise = fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
@@ -624,3 +625,77 @@ async function getTeam() {
 }
 
 getTeam();
+*/
+// Level 1: The "Digital Blueprint" (Basics)
+// The Goal: Create a simple object that stores data and has one simple action.
+
+// Exercise: Create a Book class.
+
+// Attributes: title, author, pages, and currentPage.
+
+// Method: read(). Every time you call this method, it should increase currentPage by 1.
+
+// Challenge: Add logic so that if currentPage equals pages, it prints "You finished the book!" instead of increasing the number.
+
+class Book {
+  constructor(title, author, pages, currentPage) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.currentPage = currentPage;
+  }
+  read() {
+    if (this.currentPage <= this.pages) {
+      this.currentPage += 1;
+      console.log("reading..");
+    } else {
+      console.log("you finished the book!");
+    }
+  }
+}
+
+const artOfWar = new Book("The Art of War", "Sun Tzu", 3, 1);
+
+// console.log(artOfWar);
+// artOfWar.read(1);
+// console.log(artOfWar);
+// artOfWar.read(1);
+// artOfWar.read(1);
+// artOfWar.read(1);
+
+class Warrior {
+  constructor(name, hp, equippedWeapon) {
+    this.name = name;
+    this.hp = hp;
+    this.equippedWeapon = equippedWeapon;
+  }
+  attack(enemy) {
+    console.log(enemy.hp);
+    enemy.hp = enemy.hp - this.equippedWeapon.damage;
+    console.log(enemy.hp);
+    console.log(
+      `${this.name} has attacked ${enemy.name} with ${this.equippedWeapon.name} dealing ${this.equippedWeapon.damage} damage`,
+    );
+    if (enemy.hp <= 1) {
+      console.log(`${enemy.name} was defeated!`);
+    } else {
+      console.log(`${enemy.name} remaining hp = ${enemy.hp}`);
+    }
+  }
+}
+
+class Weapon {
+  constructor(name, damage) {
+    this.name = name;
+    this.damage = damage;
+  }
+}
+
+const longSword = new Weapon("long sword", 5);
+const rustySword = new Weapon("rusty sword", 3);
+
+const warriorA = new Warrior("A", 10, longSword);
+const warriorB = new Warrior("B", 10, rustySword);
+
+warriorA.attack(warriorB);
+warriorA.attack(warriorB);
