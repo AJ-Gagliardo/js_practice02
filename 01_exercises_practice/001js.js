@@ -596,4 +596,31 @@ function useData() {
   }
 }
 
-getPokemonData("pikachu");
+// getPokemonData("pikachu");
+
+async function getTeam() {
+  try {
+    const p1Promise = fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+    const p2Promise = fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+    const p3Promise = fetch("https://pokeapi.co/api/v2/pokemon/charizard");
+
+    //promise all
+    const responses = await Promise.all([p1Promise, p2Promise, p3Promise]);
+    // console.log("responses: ", responses);
+
+    const dataPromises = responses.map((p) => p.json());
+    // console.log("data promises ", dataPromises);
+    const teamData = await Promise.all(dataPromises);
+    console.log("Team data: ", teamData);
+
+    //
+    console.log(
+      "your team: ",
+      teamData.map((p) => p.name),
+    );
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getTeam();
