@@ -663,10 +663,19 @@ const artOfWar = new Book("The Art of War", "Sun Tzu", 3, 1);
 // artOfWar.read(1);
 // artOfWar.read(1);
 
-class Warrior {
-  constructor(name, hp, equippedWeapon) {
+class Character {
+  constructor(name, hp) {
     this.name = name;
     this.hp = hp;
+  }
+  status() {
+    console.log(`${this.name}'s hp = ${this.hp}`);
+  }
+}
+class Warrior extends Character {
+  constructor(name, hp, equippedWeapon) {
+    super(name, hp);
+
     this.equippedWeapon = equippedWeapon;
   }
   attack(enemy) {
